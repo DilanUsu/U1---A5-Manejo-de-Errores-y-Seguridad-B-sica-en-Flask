@@ -1,0 +1,7 @@
+Flask
+Flask-RESTful
+Flask-SQLAlchemy
+PyMySQL
+cryptography
+python-dotenv
+sentry-sdk[flask]

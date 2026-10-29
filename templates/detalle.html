@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ juego.titulo }} · Videojuegos{% endblock %}
+{% block content %}
+<h1 class="title">{{ juego.titulo }}</h1>
+<p class="subtitle">{{ juego.genero }} · {{ juego.plataforma }}</p>
+{% if vista == 'completa' %}
+<table class="table">
+  <tr><th>ID</th><td>{{ juego.id }}</td></tr>
+  <tr><th>Año</th><td>{{ juego.anio or '—' }}</td></tr>
+  <tr><th>Precio</th><td>{{ '$%.2f'|format(juego.precio) if juego.precio is not none else '—' }}</td></tr>
+</table>
+{% endif %}
+<a class="button" href="{{ url_for('inicio') }}">Volver</a>
+{% endblock %}

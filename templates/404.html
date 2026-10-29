@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Error 404 · Videojuegos{% endblock %}
+{% block content %}
+<div class="error-box has-text-centered">
+  <p class="error-code has-text-info">404</p>
+  <h1 class="title">Página no encontrada</h1>
+  <p class="subtitle">El videojuego o la página que buscas no existe o fue eliminado.</p>
+  <p class="has-text-grey">Ruta solicitada: <code>{{ request.path }}</code></p>
+  <a class="button is-primary mt-4" href="{{ url_for('inicio') }}">Volver al catálogo</a>
+</div>
+{% endblock %}

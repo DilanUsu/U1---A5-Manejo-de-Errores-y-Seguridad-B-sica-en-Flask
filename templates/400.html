@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Error 400 · Videojuegos{% endblock %}
+{% block content %}
+<div class="error-box has-text-centered">
+  <p class="error-code has-text-warning">400</p>
+  <h1 class="title">Solicitud incorrecta</h1>
+  <p class="subtitle">La petición no se pudo procesar porque le falta información o tiene datos no válidos.</p>
+  {% if error and error.description %}
+  <div class="notification is-warning is-light">{{ error.description }}</div>
+  {% endif %}
+  <a class="button is-primary mt-4" href="{{ url_for('inicio') }}">Volver al catálogo</a>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="title">Catálogo de videojuegos</h1>
+<table class="table is-fullwidth is-striped">
+  <thead><tr><th>ID</th><th>Título</th><th>Género</th><th>Plataforma</th><th>Año</th><th></th></tr></thead>
+  <tbody>
+  {% for juego in juegos %}
+    <tr>
+      <td>{{ juego.id }}</td>
+      <td>{{ juego.titulo }}</td>
+      <td>{{ juego.genero }}</td>
+      <td>{{ juego.plataforma }}</td>
+      <td>{{ juego.anio or '—' }}</td>
+      <td><a class="button is-small is-info" href="{{ url_for('videogame', id=juego.id, vista='completa') }}">Ver</a></td>
+    </tr>
+  {% else %}
+    <tr><td colspan="6">No hay juegos registrados.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
